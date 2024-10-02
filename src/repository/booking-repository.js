@@ -22,7 +22,10 @@ class BookingRepository {
   }
   async update(bookingId, data) {
     try {
+      console.log(bookingId);
+      
       const booking = await Booking.findByPk(bookingId);
+      console.log("Vineeth---",booking.status);
       if (data.status) {
         booking.status = data.status;
       }
